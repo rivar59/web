@@ -1,0 +1,143 @@
+body { 
+    background-image: linear-gradient(45deg, rgb(18, 78, 152), rgb(101, 12, 85));
+    margin: 0px 50px 50px; 
+    } 
+   
+   div {    
+    border-radius: 0px;
+ }
+
+    .sidebar {
+        background-color: rgb(18, 78, 152);
+        top: 0;
+    }
+
+    div.navigation {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        background-color: lightgray;
+    }
+
+    .header{
+        margin-bottom: 5px;
+        background-image: url("banner.png");
+        color:white;
+    }
+
+    .footer {
+        margin-top: 5px;
+    }
+
+    .pres {
+        color: whitesmoke;
+    }
+    
+    .info{
+        text-shadow: #AAA;
+    }
+
+    .ad {
+        background-color: rgb(101, 12, 85);
+    }
+
+    .pp {
+        width: 50%;
+    }
+
+    .page1 {        
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .pp_t1 {
+        width: 20%;
+        shape-image-threshold: .2;
+        shape-margin: 20px;
+        float: left;
+        shape-outside: circle(37%);
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .text_title {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .textcontent {
+        text-align: left;
+        margin-left: 10px;
+        
+    }
+
+
+    .div_p1 {
+        width: 10%;
+        align-items: flex-start;
+    }
+
+    .pp_pres {
+        width: 10%;
+        flex-basis: 10%;
+    }
+
+    .text1 {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .ad1 {
+        width: 100%;
+    }
+    .ad2 {
+        width: 100%;
+    }.ad3 {
+        width: 100%;
+    }
+
+    .insta, .twitter, .fb, .discord {
+        width: 5%;
+    }
+
+    .box1 {
+        color: white;
+    }
+
+    .ad>img{
+        max-width: 100%;
+        height: 190px;
+    
+    }
+
+    
+    @media only screen and (max-width: 540px) {
+        .center {
+            order: -1;
+        }
+    }
+
+    @media only screen and (max-width: 960px) and (min-width: 540px) {
+        .center {
+            order: -1;
+        }
+
+        .sidebar {
+            align-items: flex-start;
+            flex-flow: column wrap; 
+        }
+    }
+
+    nav, .scroll-container {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+      }
+      nav {
+        width: 339px;
+        padding: 5px;
+      }
+      .scroll-container {
+        scroll-behavior: smooth;
+      }
