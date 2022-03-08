@@ -5,9 +5,10 @@ body {
   
 
     .sidebar {
-        background-color: rgb(18, 78, 152);
         color : lightgreen;
     }
+
+
 
     div.navigation {
         position: -webkit-sticky;
@@ -21,6 +22,8 @@ body {
         margin-bottom: 10px;
         background-image: url("picture/banner.png");
         color:white;
+        height: 200px;
+        text-align: center;
     }
 
     .footer {
@@ -136,6 +139,24 @@ body {
         margin-top: 10px;
     }
     
+    nav, .scroll-container {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+      }
+      nav {
+        width: 339px;
+        padding: 5px;
+      }
+      .scroll-container {
+        scroll-behavior: smooth;
+      }
+
+      
+      .tkt {
+        background-color: rgb(18, 78, 152);
+      }
+
     @media only screen and (max-width: 540px) {
         .center {
             order: -1;
@@ -153,15 +174,12 @@ body {
         }
     }
 
-    nav, .scroll-container {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-      }
-      nav {
-        width: 339px;
-        padding: 5px;
-      }
-      .scroll-container {
-        scroll-behavior: smooth;
-      }
+
+    @media only screen and (min-width: 960px) {
+
+        .tkt {
+            position: fixed;
+            margin-left: 0px;
+            width : 24%;
+        }
+    }

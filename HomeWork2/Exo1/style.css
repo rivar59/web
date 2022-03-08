@@ -1,0 +1,49 @@
+.div1 {
+    background-color: blue;
+    width: 10%;
+    height: 200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.div2 {
+    background-color: red;
+    width: 80%;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 12.5px;
+}
+
+.div3 {
+    align-items: center;
+    background-color: yellow;
+    width: 70%;
+    height: 100px;
+    
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+p.value {
+    text-align: center;
+}
+
+.divvalue {
+    margin: 0 auto;
+    width: 5%;
+    height: 50px;
+    border: solid;
+    margin-top: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reset {
+    margin-top: 10px;
+}
+
