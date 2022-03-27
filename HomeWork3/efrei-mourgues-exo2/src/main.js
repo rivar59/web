@@ -6,6 +6,9 @@ import { createStore } from 'vuex'
 const store = createStore({
     state () {
         return {
+            basket:0,
+            total:0,
+            product:81,
             items : [
                 {
                     name: "Canon 5D",
@@ -16,8 +19,8 @@ const store = createStore({
                 },
                 {
                     name: "Canon 2000D",
-                    number: 12,
-                    max: 12,
+                    number: 10,
+                    max: 10,
                     price: 500,
                     url: "https://i1.adis.ws/i/canon/2728C004_EOS-2000D-Black-Body-01/2728c004_eos-2000d-black-body-01?w=1500&bg=gray95"
                 },
@@ -30,8 +33,8 @@ const store = createStore({
                 },
                 {
                     name: "Canon EF 50mm f/1.8L",
-                    number: 12,
-                    max: 12,
+                    number: 20,
+                    max: 20,
                     price: 130,
                     url: "https://image.ceneostatic.pl/data/products/37898886/i-canon-ef-50mm-f-1-8-stm-0570c002.jpg"
                 },
@@ -44,8 +47,8 @@ const store = createStore({
                 },
                 {
                     name: "Canon EF 600mm f/4L IS III USM",
-                    number: 12,
-                    max: 12,
+                    number: 15,
+                    max: 15,
                     price: 14000,
                     url: "https://i1.adis.ws/i/canon/3329C005_EF-600mm-f4L-IS-III-USM_06/3329c005_ef-600mm-f4l-is-iii-usm_06?w=800&bg=gray95"
                 }
@@ -54,12 +57,16 @@ const store = createStore({
     },
     mutations: {
         addBasketItem(state, item) {
-            // clone current basket and add item
-            this.basket++;
             item.number--;
-            this.total = this.total + item.price;
-            this.product--;
-            this.taken.add(item);
+            state.basket++;
+            state.product--;
+            state.total = state.total + item.price;
+        },
+        removeItem(state, item){
+            item.number++;
+            state.basket--;
+            state.total = state.total - item.price;
+            state.product++;
         }
     }
 });
@@ -67,4 +74,4 @@ const store = createStore({
 
 
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(store).mount('#app')
