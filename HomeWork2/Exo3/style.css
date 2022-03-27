@@ -1,0 +1,33 @@
+.header {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text{
+  text-align: center;
+}
+
+.picture_data{
+    margin: 10px;
+    width: 30%;
+    margin-left: 20px;
+
+  }
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgb(18, 78, 152), rgb(101, 12, 85));
+  }
+  
+  img{
+    width: 99%;
+  }
+  
+
+  
