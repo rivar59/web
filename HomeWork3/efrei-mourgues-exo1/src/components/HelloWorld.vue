@@ -11,8 +11,6 @@
     
     </span>
 
-
-
     <div v-for="item in list" :key="item.message" id="tab">
     <div class="item" @click="bar(item)" v-bind:class="{ priority: item.is_high, drop: item.is_drop }">{{ item.message }}</div>
     </div>
@@ -55,10 +53,7 @@ export default {
     bar(item){
       item.is_drop = !item.is_drop;
     }
-  },
-  setInterval(function(){ 
-        self.mainImageSrc = self.images[Math.floor(Math.random()*self.images.length)].image;
-    }, 5000);
+  }
 }
 </script>
 
