@@ -11,8 +11,8 @@
            uk-grid v-if="allComments.length">
         <div class="uk-width-1-2@m" v-for="comment in allComments" :key="comment.id">
           <Comment :id="comment.id" :not_spoiler="true"/>
-          <button key="remove" @click="loadMyFavComments();
-          toggleFavCommentdown(comment);">Delete</button>
+          <button key="remove" @click="toggleFavCommentdown(comment);
+          loadMyFavComments();">Delete</button>
         </div>
       </div>
 

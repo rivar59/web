@@ -41,6 +41,10 @@ const CommentSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  star: {
+    type: Array,
+    default: []
+  }
 });
 
 CommentSchema.method("toJSON", function() {

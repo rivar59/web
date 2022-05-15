@@ -2,11 +2,21 @@
   <div>
     <div class="uk-overflow-auto">
       <form class="uk-margin uk-flex">
-        <input v-model="query" type="search" class="uk-input" placeholder="Author...">
-        <button @click.prevent="findComments(query)" class="uk-button uk-button-primary">
+        <input v-model="query" type="search" class="uk-input" placeholder="Item...">
+        <button @click.prevent="findComments(query); clear1();" class="uk-button uk-button-primary">
+          Search
+        </button>
+        <select name="type" v-model="type">
+        <option>Lens</option>
+        <option>Camera</option>
+        <option>Backpack</option>
+        <option>Other</option>
+      </select>
+        <button @click.prevent="findType(type); clear2();" class="uk-button uk-button-primary">
           Search
         </button>
       </form>
+      <button @click="clear(); loadComments();" class="uk-button uk-button-primary">Clear</button>
 
       <div class="uk-margin uk-grid-match" uk-grid v-if="allComments.length">
         <div class="uk-width-1-1" v-for="comment in allComments" :key="comment.id">
@@ -30,6 +40,7 @@ export default {
   data() {
     return {
       query: '',
+      type: '',
     };
   },
   components: {
@@ -44,7 +55,23 @@ export default {
   methods: {
     ...mapActions({
       findComments: 'findComments',
+      findType: 'findType',
+      loadComments: 'loadComments',
     }),
+    clear1() {
+      console.log('hallo');
+      this.type = '';
+    },
+    clear2() {
+      console.log('hallo2');
+      this.query = '';
+    },
+    clear() {
+      console.log(this.type);
+      console.log('hallo2');
+      this.query = '';
+      this.type = '';
+    },
   },
   created() {
     this.$store.dispatch('loadComments');

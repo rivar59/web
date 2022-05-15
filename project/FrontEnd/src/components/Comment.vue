@@ -20,6 +20,12 @@
                 Delete
               </button>
       </div>
+      <div style="display:inline-block;">
+      <star-rating v-model:rating="resetableRating"></star-rating>
+      <div style="padding-top:10px;cursor:pointer;margin-bottom:20px;color: blue;">
+        <a @click="resetableRating = 0;">Reset
+        Rating</a></div>
+      </div>
     </header>
   </article>
 </template>

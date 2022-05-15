@@ -53,7 +53,7 @@ export default createStore({
       )
         .then(() => {
           commit('ADD_COMMENT', comment);
-          notify('Comment successfully added', 'success');
+          notify('New item successfully added', 'success');
         })
         .catch((err) => {
           const { message } = err.response.data;
@@ -72,7 +72,8 @@ export default createStore({
       )
         .then((res) => {
           commit('REMOVE_COMMENT', comment);
-          notify(res.data.message, 'success');
+          console.log(res.data.message);
+          notify('Item deleted', 'success');
         })
         .catch((err) => {
           notify(err.message, 'danger');
@@ -101,6 +102,16 @@ export default createStore({
         });
     },
     findComments({ commit }, query) {
+      axios.get(`${constants.COMMENTS_ENDPOINT}?q=${query.trim()}`)
+        .then((res) => {
+          commit('LOAD_COMMENTS', res.data);
+        })
+        .catch((err) => {
+          notify(err.message, 'danger');
+          throw new Error(`API ${err}`);
+        });
+    },
+    findType({ commit }, query) {
       axios.get(`${constants.COMMENTS_ENDPOINT}?q=${query.trim()}`)
         .then((res) => {
           commit('LOAD_COMMENTS', res.data);

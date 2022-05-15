@@ -13,7 +13,7 @@
           <router-link to="/add" custom
                        v-slot="{ href, navigate, isActive }">
             <li :class="{'uk-active': isActive}" v-if="isConnected && user.role === 'admin'">
-              <a :href="href" @click="navigate">Add basket</a>
+              <a :href="href" @click="navigate">Add Item</a>
             </li>
           </router-link>
           <router-link to="/mine" custom
